@@ -1,0 +1,12 @@
+.editor-post-title__block .editor-post-title__input,
+.edit-post-visual-editor, .edit-post-visual-editor p,
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, 
+.editor-styles-wrapper h4, .editor-styles-wrapper h5, .editor-styles-wrapper h6,
+.block-editor-default-block-appender textarea.block-editor-default-block-appender__content,
+.editor-styles-wrapper {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.editor-post-title__block .editor-post-title__input {
+    font-weight: 700;
+}

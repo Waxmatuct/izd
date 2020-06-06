@@ -1,0 +1,99 @@
+html, body
+	font-family: 'Roboto', sans-serif !important
+
+*:hover
+	transition: ease 0.5s
+
+.adress
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+.site-title
+	font-size: 2rem
+
+.navigation
+	display: flex
+	flex-direction: column
+	align-items: center
+	border-bottom: 1px solid #f2f2f2
+
+.nav-menu
+	display: flex
+	flex-direction: row
+	justify-content: center
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+.nav-link
+	font-size: 0.938rem
+	font-weight: bold
+	color: #222
+	border-bottom: 1px solid #fff
+
+.article
+	width: 80%
+.title
+	margin-bottom: 1.5rem !important
+.post
+	display: block
+	margin-bottom: 2rem
+.entry-header a
+	color: #222
+	&:hover
+		text-decoration: none
+
+table
+	font-size: 0.7rem
+	overflow-y: hidden
+	thead
+		background: #dee2e6
+		th
+			vertical-align: top !important
+			text-align: center
+
+.main-table
+	height: auto
+	overflow-y: auto
+
+.help-content
+	height: 700px
+	overflow-y: scroll
+
+.blog-footer 
+	padding: 2.5rem 0
+	color: #999
+	text-align: center
+
+@media (max-width: 1199.98px)
+	.site-title
+		font-size: 1.75rem
+
+@media (max-width: 991.98px)
+	
+	.nav-menu
+		flex-direction: column
+	.navigation
+		align-items: flex-start
+		margin-left: 20px
+
+	.dropdown
+		display: block
+		background: none
+
+	.adress
+		display: none !important
+
+@media (max-width: 767.98px)
+	
+	.site-title
+		font-size: 1.3rem
+	
+	article
+		width: 100%
+
+@media (max-width: 575.98px)
+
+	.container
+		padding: 0 !important
