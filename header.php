@@ -17,8 +17,18 @@
     <header class="header mt-2 mb-4 pl-4 pr-4">
       <div class="row">
         <div class="col-lg-8 col-12">
-          <img src="<?php echo get_template_directory_uri() . '/img/small_logo.png'?>" class="d-block float-left logo ml-0 mt-2 mb-2 mr-2" alt="" style="max-width: 80px">
-          <div class="titles d-flex flex-column justify-content-center mt-3 mb-3">
+          <?
+            $logo_img = '';
+            if( $custom_logo_id = get_theme_mod('custom_logo') ){
+              $logo_img = wp_get_attachment_image( $custom_logo_id, array(80,80), false, array(
+                'class'    => 'd-block float-left logo ml-0 mt-2 mb-2 mr-2',
+                'itemprop' => 'logo',
+                'alt'      => 'logo'
+              ) );
+            }
+            echo $logo_img;
+          ?> 
+        <div class="titles d-flex flex-column justify-content-center mt-3 mb-3">
             <h1 class="site-title m-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-decoration-none text-dark font-weight-bold"><?php bloginfo( 'name' ); ?></a></h1>
             <?php
               $izd_description = get_bloginfo( 'description', 'display' );

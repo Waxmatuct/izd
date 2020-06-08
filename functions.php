@@ -41,6 +41,8 @@ function my_gutenberg_style() {
 }
 add_action('enqueue_block_editor_assets', 'my_gutenberg_style');
 
+add_theme_support( 'custom-logo' );
+
 //отключение jquery-migrate-min
 function remove_jq_migrate( $scripts ) {
 if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
