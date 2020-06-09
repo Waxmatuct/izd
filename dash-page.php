@@ -11,14 +11,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
 global $wpdb;
 // если была нажата кнопка "Отправить"
 if($_POST['submit1']) {
-  $number = $wpdb->real_escape_string($_POST['number']);
-  $facult_id = $wpdb->real_escape_string($_POST['faculteti']);
-  $authors = $wpdb->real_escape_string($_POST['authors']);
-  $naimen = $wpdb->real_escape_string($_POST['naimen']);
-  $vid_izd = $wpdb->real_escape_string($_POST['vid_izd']);
-  $disciple = $wpdb->real_escape_string($_POST['disciple']);
-  $izd_list = $wpdb->real_escape_string($_POST['izd_list']);
-  $tiraj = $wpdb->real_escape_string($_POST['tiraj']);
+  $number = $wpdb->_real_escape($_POST['number']);
+  $facult_id = $wpdb->_real_escape($_POST['faculteti']);
+  $authors = $wpdb->_real_escape($_POST['authors']);
+  $naimen = $wpdb->_real_escape($_POST['naimen']);
+  $vid_izd = $wpdb->_real_escape($_POST['vid_izd']);
+  $disciple = $wpdb->_real_escape($_POST['disciple']);
+  $izd_list = $wpdb->_real_escape($_POST['izd_list']);
+  $tiraj = $wpdb->_real_escape($_POST['tiraj']);
   $year = 2020;
   $srok_sdachi = $_POST['srok_sdachi'];
   $query = "INSERT INTO plan (number, facult_id, author, naimen, vid_izd, disciple, izd_list, tiraj, year, srok_sdachi) VALUES ('$number', '$facult_id', '$authors', '$naimen', '$vid_izd', '$disciple', '$izd_list', '$tiraj', '$year', '$srok_sdachi')";
