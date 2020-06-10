@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-config.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php'); 
 global $wpdb;
-$query = "SELECT * FROM plan ORDER BY number DESC";
+$query = "SELECT * FROM izd_plan ORDER BY number DESC";
 $result = $wpdb->get_results($query, ARRAY_N);
 if ($result) : 
   foreach ($result as $row) { 

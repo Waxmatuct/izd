@@ -21,7 +21,7 @@ if($_POST['submit1']) {
   $tiraj = $wpdb->_real_escape($_POST['tiraj']);
   $year = 2020;
   $srok_sdachi = $_POST['srok_sdachi'];
-  $query = "INSERT INTO plan (number, facult_id, author, naimen, vid_izd, disciple, izd_list, tiraj, year, srok_sdachi) VALUES ('$number', '$facult_id', '$authors', '$naimen', '$vid_izd', '$disciple', '$izd_list', '$tiraj', '$year', '$srok_sdachi')";
+  $query = "INSERT INTO izd_plan (number, facult_id, author, naimen, vid_izd, disciple, izd_list, tiraj, year, srok_sdachi) VALUES ('$number', '$facult_id', '$authors', '$naimen', '$vid_izd', '$disciple', '$izd_list', '$tiraj', '$year', '$srok_sdachi')";
   $result = $wpdb->query($query);
   if ($result) : 
 	echo "<script>alert(\"Данные успешно внесены.\"); location='index.php';</script>"; 
@@ -34,8 +34,8 @@ if ($_POST['submit2']) {
   $sdano = 1;
   $status = $_POST['status'];
   if ($mesac_sdachi < 1 ) {
-  	$query = "UPDATE plan SET sdano = '$sdano', status = '$status' WHERE number = '$number'";
-  } else $query = "UPDATE plan SET sdano = '$sdano', srok_predost = '$mesac_sdachi', status = '$status' WHERE number = '$number'";
+  	$query = "UPDATE izd_plan SET sdano = '$sdano', status = '$status' WHERE number = '$number'";
+  } else $query = "UPDATE izd_plan SET sdano = '$sdano', srok_predost = '$mesac_sdachi', status = '$status' WHERE number = '$number'";
   $result = $wpdb->query($query);
   if ($result) :
 	echo "<script>alert(\"Данные успешно внесены.\"); location='index.php';</script>"; 
@@ -49,11 +49,11 @@ if ($_POST['submit2']) {
     <h1 class="h2">План изданий</h1>
   </div>
   <p>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#plan_izd" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#izd_plan_izd" aria-expanded="false" aria-controls="collapseExample">
       Внести инфу в план
     </button>
   </p>
-  <div class="collapse" id="plan_izd">
+  <div class="collapse" id="izd_plan_izd">
     <div class="card card-body">
       <form method="post" class="was-validated">
         <div class="form-group">
@@ -107,11 +107,11 @@ if ($_POST['submit2']) {
       </div>
     </div>
     <p class="mt-2">
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#obn_plan" aria-expanded="false" aria-controls="collapseExample">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#obn_izd_plan" aria-expanded="false" aria-controls="collapseExample">
         Обновить статус в плане
       </button>
     </p>
-    <div class="collapse" id="obn_plan">
+    <div class="collapse" id="obn_izd_plan">
       <div class="card card-body">
         <form method="post" class="form-inline was-validated">
           <div class="form-group mt-2">
@@ -142,8 +142,8 @@ if ($_POST['submit2']) {
           </div>
         </div>
 
-        <div id="plan" class="table-responsive main-table mt-3">
-          <table id="plan-table" class="table table-hover table-striped">
+        <div id="izd_plan" class="table-responsive main-table mt-3">
+          <table id="izd_plan-table" class="table table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">№ в плане</th>

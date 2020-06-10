@@ -4,15 +4,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
 global $wpdb;
 $facult_id = $_POST['facultet'];
 $srok_sdachi = $_POST['srok_sdachi'];
-$not_include = "148, 150";
+$not_include = get_field( 'exclude_numb', 49);
 if ($facult_id > 0 && $srok_sdachi > 0) {
-  $query = "SELECT * FROM plan WHERE facult_id = $facult_id AND srok_sdachi = $srok_sdachi AND plan.id NOT IN($not_include) ORDER BY plan.number ASC";
+  $query = "SELECT * FROM izd_plan WHERE facult_id = $facult_id AND srok_sdachi = $srok_sdachi AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
 } else if ($facult_id > 0 && $srok_sdachi == 0) {
-  $query = "SELECT * FROM plan WHERE facult_id = $facult_id AND plan.id NOT IN($not_include) ORDER BY plan.number ASC";
+  $query = "SELECT * FROM izd_plan WHERE facult_id = $facult_id AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
 } else if ($facult_id == 0 && $srok_sdachi > 0) {
-  $query = "SELECT * FROM plan WHERE srok_sdachi = $srok_sdachi AND plan.id NOT IN($not_include) ORDER BY plan.number ASC";
+  $query = "SELECT * FROM izd_plan WHERE srok_sdachi = $srok_sdachi AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
 } else
-$query = "SELECT * FROM plan WHERE plan.id NOT IN($not_include)";
+$query = "SELECT * FROM izd_plan WHERE izd_plan.id NOT IN($not_include)";
 $result = $wpdb->get_results($query, ARRAY_N);
 if ($result) : 
   foreach ($result as $row) {
