@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/wp-load.php');
 global $wpdb;
 $facult_id = $_POST['facultet'];
 $srok_sdachi = $_POST['srok_sdachi'];
-$not_include = get_field( 'exclude_numb');
+$not_include = get_field( 'exclude_numb', 49);
 if ($facult_id > 0 && $srok_sdachi > 0) {
   $query = "SELECT SUM(izd_plan.sdano) as sdano, COUNT(izd_plan.facult_id) as total, SUM(izd_plan.izd_list) as sum, COUNT(izd_plan.facult_id), (SUM(izd_plan.sdano) / COUNT(izd_plan.facult_id)*100) as proc FROM izd_plan WHERE facult_id = $facult_id AND srok_sdachi = $srok_sdachi AND izd_plan.id NOT IN($not_include)";
 } else if ($facult_id > 0 && $srok_sdachi == 0) {

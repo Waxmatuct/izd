@@ -5,7 +5,7 @@ global $wpdb;
 $pref = $wpdb->base_prefix;
 $facult_id = $_POST['facultet'];
 $srok_sdachi = $_POST['srok_sdachi'];
-$not_include = get_field( 'exclude_numb');
+$not_include = get_field( 'exclude_numb', 49);
 if ($facult_id > 0 && $srok_sdachi > 0) {
   $query = "SELECT * FROM izd_plan WHERE facult_id = $facult_id AND srok_sdachi = $srok_sdachi AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
 } else if ($facult_id > 0 && $srok_sdachi == 0) {
