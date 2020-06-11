@@ -142,8 +142,8 @@ if ($_POST['submit2']) {
           </div>
         </div>
 
-        <div id="izd_plan" class="table-responsive main-table mt-3">
-          <table id="izd_plan-table" class="table table-hover table-striped">
+        <div id="plan" class="table-responsive main-table mt-3">
+          <table id="plan-table" class="table table-hover table-striped">
             <thead>
               <tr>
                 <th scope="col">№ в плане</th>
