@@ -4,7 +4,6 @@
   <!-- Required meta tags -->
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="<?php echo get_template_directory_uri() . '/img/favicon.png'?>">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <meta name="keywords" content="сочинский, государственный, университет, сочи, РИЦ, редакция, типография">
   <meta name="description" content="Редакционно-издательский центр">
@@ -20,7 +19,7 @@
           <?
             $logo_img = '';
             if( $custom_logo_id = get_theme_mod('custom_logo') ){
-              $logo_img = wp_get_attachment_image( $custom_logo_id, array(80,80), false, array(
+              $logo_img = wp_get_attachment_image( $custom_logo_id, array(75,75), false, array(
                 'class'    => 'd-block float-left logo ml-0 mt-2 mb-2 mr-2',
                 'itemprop' => 'logo',
                 'alt'      => 'logo'
