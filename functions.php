@@ -43,6 +43,18 @@ add_action('enqueue_block_editor_assets', 'my_gutenberg_style');
 
 add_theme_support( 'custom-logo' );
 
+//Ссылка на План изданий в админ-меню
+add_action('admin_menu', 'dashboard_page'); 
+function dashboard_page() {
+
+	$post_id  = 55;
+	$url = get_permalink( $post_id );
+		if ( $url ) {
+			add_menu_page( 'План изданий', 'План изданий', 'manage_options', $url, '', 'dashicons-chart-bar', 1 );
+		}
+
+}
+
 //отключение jquery-migrate-min
 function remove_jq_migrate( $scripts ) {
 if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
