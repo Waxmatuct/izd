@@ -11,8 +11,8 @@ function izd_styles() {
 
 function jquery_lib() {
 	wp_deregister_script( 'jquery-core' );
-	wp_register_script( 'jquery-core', '//code.jquery.com/jquery-3.4.1.min.js');
-	wp_enqueue_script('jquery');
+	wp_register_script( 'jquery-core', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', false, null, true );
+	wp_enqueue_script( 'jquery-core', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', array(), null, true );
 	wp_register_script( 'popper', '//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js');
 	wp_enqueue_script('popper', '', array('jquery'), null, true);
 	wp_register_script( 'bootstrap-min', '//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js');
