@@ -26,7 +26,7 @@ Template Name: План изданий
 			      ?>
 			    </div>
 			    <p class="text-muted" style="font-size: 0.9rem">* Таблица обновлена <?php echo the_field( 'update');?></p>
-			    <p class="text-muted" style="font-size: 0.9rem">** Литература приобретает статус "издано" после присвоения внутреннего номенклатурного номера.</p>
+			    <p class="text-muted" style="font-size: 0.9rem">** Литература приобретает статус «издано» после передачи на склад материально-технического снабжения.</p>
 		  </div>
 		  
 		  <form class="border rounded p-3 d-flex justify-content-center align-items-center flex-wrap">
