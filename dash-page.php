@@ -19,7 +19,7 @@ if($_POST['submit1']) {
   $disciple = $wpdb->_real_escape($_POST['disciple']);
   $izd_list = $wpdb->_real_escape($_POST['izd_list']);
   $tiraj = $wpdb->_real_escape($_POST['tiraj']);
-  $year = 2020;
+  $year = date("Y");
   $srok_sdachi = $_POST['srok_sdachi'];
   $query = "INSERT INTO izd_plan (number, facult_id, author, naimen, vid_izd, disciple, izd_list, tiraj, year, srok_sdachi) VALUES ('$number', '$facult_id', '$authors', '$naimen', '$vid_izd', '$disciple', '$izd_list', '$tiraj', '$year', '$srok_sdachi')";
   $result = $wpdb->query($query);
