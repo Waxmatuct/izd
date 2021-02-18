@@ -48,10 +48,18 @@ add_action('admin_menu', 'dashboard_page');
 function dashboard_page() {
 
 	$post_id  = 55;
+  $title = 'План 2020';
 	$url = get_permalink( $post_id );
 		if ( $url ) {
-			add_menu_page( 'План изданий', 'План изданий', 'manage_options', $url, '', 'dashicons-chart-bar', 1 );
+			add_menu_page( $title, $title, 'manage_options', $url, '', 'dashicons-chart-bar', 1 );
 		}
+
+  $post_id  = 275;
+  $title = 'План 2021';
+  $url = get_permalink( $post_id );
+    if ( $url ) {
+      add_menu_page( $title, $title, 'manage_options', $url, '', 'dashicons-chart-bar', 1 );
+    }
 
 }
 

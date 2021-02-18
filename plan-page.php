@@ -60,9 +60,11 @@ Template Name: План изданий
 			<script type="text/javascript">
 				var template_directory = "<?php echo get_template_directory_uri(); ?>";
 			</script>
+			<input type="hidden" id="year" value="<?php echo $year; ?>"></input>
+			<input type="hidden" id="post_id" value="<?php echo $post_id; ?>"></input>
 		    <input type="button" class="btn btn-primary p-2 mt-3" style="width: 150px;" value="Применить" onclick="onClick()" ></input>
 		  </form>
-		  <div id="plan" class="table-responsive main-table mt-3 d-none">
+		  <div id="plan" class="table-responsive main-table mt-3">
 		    <table class="table table-hover table-striped">
 		      <thead>
 		        <tr>

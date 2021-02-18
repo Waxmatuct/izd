@@ -5,15 +5,23 @@ global $wpdb;
 $pref = $wpdb->base_prefix;
 $facult_id = $_POST['facultet'];
 $srok_sdachi = $_POST['srok_sdachi'];
-$not_include = get_field( 'exclude_numb', 49);
-if ($facult_id > 0 && $srok_sdachi > 0) {
-  $query = "SELECT * FROM izd_plan WHERE facult_id = $facult_id AND srok_sdachi = $srok_sdachi AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
-} else if ($facult_id > 0 && $srok_sdachi == 0) {
-  $query = "SELECT * FROM izd_plan WHERE facult_id = $facult_id AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
-} else if ($facult_id == 0 && $srok_sdachi > 0) {
-  $query = "SELECT * FROM izd_plan WHERE srok_sdachi = $srok_sdachi AND izd_plan.id NOT IN($not_include) ORDER BY izd_plan.number ASC";
+$value = get_field( 'exclude_numb', $post->ID);
+if( $value ) {
+	$not_include = "AND izd_plan.number NOT IN($value)";
+}
+else {
+	$not_include = '';
+}
+$year = get_field( 'year', $post->ID);
+$year_on_click = $_POST['year'];
+if ($facult_id > 0 && $srok_sdachi > 0 && $year_on_click) {
+  $query = "SELECT * FROM izd_plan WHERE izd_plan.facult_id = $facult_id AND izd_plan.srok_sdachi = $srok_sdachi AND izd_plan.year = $year_on_click $not_include ORDER BY izd_plan.number ASC";
+} else if ($facult_id > 0 && $srok_sdachi == 0 && $year_on_click) {
+  $query = "SELECT * FROM izd_plan WHERE izd_plan.facult_id = $facult_id AND izd_plan.year = $year_on_click $not_include ORDER BY izd_plan.number ASC";
+} else if ($facult_id == 0 && $srok_sdachi > 0 && $year_on_click) {
+  $query = "SELECT * FROM izd_plan WHERE izd_plan.srok_sdachi = $srok_sdachi AND izd_plan.year = $year_on_click $not_include ORDER BY izd_plan.number ASC";
 } else
-$query = "SELECT * FROM izd_plan WHERE izd_plan.id NOT IN($not_include)";
+$query = "SELECT * FROM izd_plan WHERE izd_plan.year = $year $not_include";
 $result = $wpdb->get_results($query, ARRAY_N);
 if ($result) : 
   foreach ($result as $row) {
@@ -81,5 +89,5 @@ if ($result) :
     <?
   }
 else :?>
-  <span> Не найдено</span>
+  <span> Не выбраны значения из формы.</span>
 <?php endif; ?> 
