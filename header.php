@@ -16,7 +16,7 @@
     <header class="header mt-2 mb-4 pl-4 pr-4">
       <div class="row">
         <div class="col-lg-8 col-12">
-          <?
+          <?php
             $logo_img = '';
             if( $custom_logo_id = get_theme_mod('custom_logo') ){
               $logo_img = wp_get_attachment_image( $custom_logo_id, array(75,75), false, array(

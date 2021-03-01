@@ -67,9 +67,10 @@ if ($result) :
       <td class="text-center"><?=$srok2?></td>
       <td class="text-center"><?=$st?></td>
     </tr>
-    <?
+    <?php
   }
-else :?>
+else :
+?>
   <span> Не найдено</span>
 <?php endif; ?> 
 

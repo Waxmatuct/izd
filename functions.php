@@ -54,7 +54,7 @@ function dashboard_page() {
 			add_menu_page( $title, $title, 'manage_options', $url, '', 'dashicons-chart-bar', 1 );
 		}
 
-  $post_id  = 275;
+  $post_id  = 268;
   $title = 'План 2021';
   $url = get_permalink( $post_id );
     if ( $url ) {
